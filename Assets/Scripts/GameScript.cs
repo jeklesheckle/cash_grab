@@ -7,9 +7,13 @@ public class GameScript : MonoBehaviour
 {
     public GameObject coinObject;
     public int minCoinSpawnDelay, maxCoinSpawnDelay;
+    public Vector2 bottomLeftOfCoinSpawn, topRightOfCoinSpawn;
 
     private float timeSinceLastCoin;
     private float coinDelay;
+
+    private float coinXCoord;
+    private float coinYCoord;
 
     private void Start()
     {
@@ -48,7 +52,10 @@ public class GameScript : MonoBehaviour
     private void SpawnCoin()
     {
         timeSinceLastCoin = 0;
-        GameObject coin = Instantiate (coinObject, new Vector3(0, 0, 0), coinObject.transform.rotation);
+        coinXCoord = Random.Range(bottomLeftOfCoinSpawn.x, topRightOfCoinSpawn.x);
+        coinYCoord = Random.Range(bottomLeftOfCoinSpawn.y, topRightOfCoinSpawn.y);
+
+        GameObject coin = Instantiate (coinObject, new Vector3(coinXCoord, coinYCoord, 0), coinObject.transform.rotation);
         coin.transform.localScale = new Vector3(0.25f, 0.25f, 1);
     }
 }

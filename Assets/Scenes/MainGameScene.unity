@@ -809,6 +809,8 @@ MonoBehaviour:
     type: 3}
   minCoinSpawnDelay: 2
   maxCoinSpawnDelay: 5
+  bottomLeftOfCoinSpawn: {x: -7, y: -3.7}
+  topRightOfCoinSpawn: {x: 7, y: 3.7}
 --- !u!1 &2120892114
 GameObject:
   m_ObjectHideFlags: 0
