@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ArmScript : MonoBehaviour
 {
-    public Vector2 target;
+    public Vector3 target;
     public float moveSpeed;
     // Start is called before the first frame update
     void Start()
